@@ -1,0 +1,138 @@
+.weather-detail-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.weatherImg{
+  background-image: url('/bg.jpg');
+  height: 90.5vh;
+  width: 100vw;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  overflow-y: auto; 
+  overflow-x: hidden; 
+}
+.weather-card {
+  margin-top: 3rem;
+  background: rgba(0, 0, 0, 0.3); /* More readable format for rgba(0, 0, 0, 0.3) */
+  border-radius: 20px;
+  padding: 20px;
+  width: 65%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
+  backdrop-filter: blur(5px);
+  color: white;
+}
+
+.weather-title {
+  text-align: center;
+}
+
+.temperature-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.temperature {
+  font-size: 3rem; /* Scalability adjustment */
+  font-weight: bold;
+}
+
+.weather-description {
+  font-size: 1.2em;
+}
+
+.weather-stats {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.weather-stat {
+  text-align: center;
+}
+
+.stat-icon {
+  font-size: 1.5em;
+}
+
+.stat-title {
+  display: block;
+}
+
+.stat-value {
+  font-weight: bold;
+}
+
+.weather-actions {
+  display: flex;
+  justify-content: space-around;
+}
+
+.button-celsius,
+.button-more-info {
+  border: none;
+  background: rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
+  backdrop-filter: blur(5px);
+  color: white;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* Media Queries */
+@media (max-width: 900px) {
+  .weather-card {
+    width: 75%;
+    padding: 15px; 
+  }
+  .temperature {
+    font-size: 2.5rem;
+  }
+  .stat-icon,
+  .stat-value {
+    font-size: 1.2em;
+  }
+}
+
+@media (max-width: 700px) {
+  .weather-card {
+    width: 85%; 
+    padding: 10px;
+  }
+  .temperature {
+    font-size: 2rem; 
+  }
+  .stat-icon,
+  .stat-value {
+    font-size: 1em; 
+  }
+}
+
+@media (max-width: 500px) {
+  .weather-card {
+    width: 95%; 
+    margin-top: 1rem;
+    padding: 5px; 
+  }
+  .temperature {
+    font-size: 1.5rem; 
+  }
+  .weather-stats {
+    flex-direction: column; 
+  }
+  .weather-actions {
+    flex-direction: column; 
+    align-items: center; 
+  }
+  .button-celsius,
+  .button-more-info {
+    width: 100%; /* Full width buttons */
+    margin: 5px 0; /* Spacing between stacked buttons */
+  }
+}
