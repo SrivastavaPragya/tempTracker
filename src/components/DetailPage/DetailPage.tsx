@@ -1,51 +1,6 @@
-// import React from 'react';
-// import './DetailPage.css';
 
-// const DetailPage = () => {
-//   return (
-//     <div className="weatherImg">
-//     <div className="weather-detail-container">
-//       <div className="weather-card">
-//         <h2 className="weather-title">Current Weather</h2>
-//         <div className="temperature-info">
-//           <span className="temperature">32°C</span>
-//           <span className="weather-description">Haze, Jaipur, India</span>
-//         </div>
-//         <div className="weather-stats">
-//           <div className="weather-stat">
-//             <span className="stat-icon" style={{fontSize:"2.5rem"}}>🌇</span>
-//             <span className="stat-title">Sunset</span>
-//             <span className="stat-value">18:49 PM</span>
-//           </div>
-//           <div className="weather-stat">
-//             <span className="stat-icon" style={{fontSize:"2.5rem"}}>💧</span>
-//             <span className="stat-title">Humidity</span>
-//             <span className="stat-value">22</span>
-//           </div>
-//           <div className="weather-stat">
-//             <span className="stat-icon" style={{fontSize:"2.5rem"}}>🔍</span>
-//             <span className="stat-title">Pressure</span>
-//             <span className="stat-value">1010</span>
-//           </div>
-//           <div className="weather-stat">
-//             <span className="stat-icon" style={{fontSize:"2.5rem"}}>💨</span>
-//             <span className="stat-title">Speed</span>
-//             <span className="stat-value">2.57</span>
-//           </div>
-//         </div>
-//         <div className="weather-actions">
-//           <button className="button-celsius">Celsius</button>
-//           <button className="button-more-info">More Info →</button>
-//         </div>
-//       </div>
-//     </div>
-//     </div>
-//   )
-// }
 
-// export default DetailPage;
-
-import React, { useEffect, useState } from 'react';
+import  { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import './DetailPage.css';
 
@@ -116,8 +71,8 @@ const DetailPage = () => {
       setWeather({
         ...weather,
         temperature:unit==='Celsius'
-        ?weather.temperature*9/5+32
-        :(weather.temperature - 32) * 5/9,
+        ?Math.floor(weather.temperature*9/5+32)
+        :Math.floor((weather.temperature - 32) * 5/9),
       });
       setUnit(unit === 'Celsius' ? 'Fahrenheit' : 'Celsius');
     }
